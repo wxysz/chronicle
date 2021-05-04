@@ -1,4 +1,6 @@
 [
+공매도 대주거래 사전교육 30분(www.kifin.or.kr), 모의거래 1시간(strn.krx.co.kr)
+
 CJ E&M
 { "Id": 207, "Name": "tvN", "SKCh": 3, "Icon_url": "http://i.imgur.com/OJ9A8fZ.png", "Source": "SK", "ServiceId": "872" },
 { "Id": 147, "Name": "OtvN", "SKCh": 84, "Icon_url": "http://i.imgur.com/0SMl3O5.png", "Source": "SK", "ServiceId": "527" },
