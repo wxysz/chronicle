@@ -40,3 +40,5 @@ jobs:
     - name: run index.py
       run: |
         python index.py
+      env:
+        MY_GITHUB_TOKEN: ${{ secrets.Web_Crawler_Key }}
