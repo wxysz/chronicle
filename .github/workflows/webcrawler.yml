@@ -1,4 +1,4 @@
-name: Djang CI
+name: Web Crawler
 
 on:
   push:
