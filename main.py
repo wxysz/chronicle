@@ -1,4 +1,20 @@
 from bs4 import BeautifulSoup
+
+html1 = """<p>test</p>"""
+soup1 = BeautifulSoup(html1, 'lxml')
+print(soup1)
+
+
+html2 = """<html><p>test</p></html>"""
+soup2 = BeautifulSoup(html2, 'lxml')
+print(soup2)
+
+html2 = """<body><p>test</p></body>"""
+soup2 = BeautifulSoup(html2, 'lxml')
+print(soup2)
+
+''' 실해한 코드
+from bs4 import BeautifulSoup
 import requests
 import json
 
@@ -27,8 +43,8 @@ for i in range(0,cnt) :
     file.write(json.dumps(naver))
 
 file.close()
-
 '''
+''' 성공한 코드
 import json,re
 from urllib.request import urlopen
 from html import unescape
