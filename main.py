@@ -1,1 +1,1 @@
-print("실행!")
+print("Hello, World!")
