@@ -39,6 +39,6 @@ jobs:
         flake8 . --count --exit-zero --max-complexity=10 --max-line-length=127 --statistics
     - name: run index.py
       run: |
-        python index.py
+        python index.py # .py 파일 실행 
       env:
-        MY_GITHUB_TOKEN: ${{ secrets.WEB_CRAWLER_KEY }}
+        MY_GITHUB_TOKEN: ${{ secrets.WEB_CRAWLER_KEY }}  # { secrets.내가 만든 토큰 값 }
