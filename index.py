@@ -5,7 +5,7 @@ from crawling_yes24 import parsing_beautifulsoup, extract_book_data
 from github_utils import get_github_repo, upload_github_issue
 
 if __name__ == "__main__":
-    access_token = os.environ['WEB_CRAWLER']
+    access_token = os.environ['MY_GITHUB_TOKEN']
     repository_name = "chronicle"
 
     seoul_timezone = timezone('Asia/Seoul')
