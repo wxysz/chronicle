@@ -6,7 +6,7 @@ from github_utils import get_github_repo, upload_github_issue
 
 if __name__ == "__main__":
     access_token = os.environ['Web_Crawler_Key']
-    repository_name = "github-action-with-python"
+    repository_name = "chronicle"
 
     seoul_timezone = timezone('Asia/Seoul')
     today = datetime.now(seoul_timezone)
