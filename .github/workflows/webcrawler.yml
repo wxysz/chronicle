@@ -1,4 +1,4 @@
-name: Web Crawler
+name: Web_Crawler
 
 on:
   schedule:
