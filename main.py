@@ -28,8 +28,7 @@ for title in datas:
     name = title.find_all('a')[0].text
     url = 'http:'+title.find('a')['href']
     data[name] = url
-        data = []
-        
+    
 with open(os.path.join(BASE_DIR, 'rank.json'), 'w+',encoding='utf-8') as json_file:
     json.dump(data, json_file, ensure_ascii = False, indent='\t')
 
