@@ -42,5 +42,3 @@ jobs:
     - name: run main.py
       run: |
         python main.py  # main.py 파일 실행 
-      env:
-        JSONP_TOKEN: ${{ secrets.JSONP }} # { secrets.내가 만든 토큰 값 }
