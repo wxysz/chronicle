@@ -1,3 +1,4 @@
+'''
 from bs4 import BeautifulSoup
 import requests
 import json
@@ -6,10 +7,38 @@ import sys
 import re
 from urllib.request import urlopen
 from html import unescape
-
+'''
 
 #datas = soup.select(    'div.sub-contents-wrap > div > div:nth-child(2) > table'    )
 
+import urllib.request as urlreq
+import os.path
+import json
+import pandas as pd
+
+url = 'https://api.github.com/repositories'
+savename = 'repository.json'
+if not os.path.exists(url) : 
+urlreq.urlretrieve(url, savename)
+data = open(savename, encoding='utf-8').read( )
+items = json.loads(data)
+item_list = []
+
+for item in items : 
+name = item['name']
+owner = item['owner']['login']
+item_list.append([name, owner])
+
+# DataFrame에 저장
+df = pd.DataFrame(columns=['저장소 이름', '소유주'], data=item_list
+
+# 확인용 출력
+print(df)
+
+# json 파일로 저장
+df.to_json('github.json')
+
+'''
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 
 print('뉴스기사 스크래핑 시작')
@@ -33,7 +62,7 @@ with open(os.path.join(BASE_DIR, 'rank.json'), 'w+',encoding='utf-8') as json_fi
     json.dump(data, json_file, ensure_ascii = False, indent='\t')
 
 print('뉴스기사 스크래핑 끝')
-
+'''
 
 '''
 html3 = """<html> <head><title>test  site</title></head> <body><p>test</p> <p>test1</p> <p>test2</p> </body></html>"""
