@@ -8,7 +8,7 @@ from urllib.request import urlopen
 from html import unescape
 
 #datas = soup.select(    'div.sub-contents-wrap > div > div:nth-child(2) > table'    )
-
+'''
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 
 print('뉴스기사 스크래핑 시작')
@@ -32,14 +32,15 @@ with open(os.path.join(BASE_DIR, 'rank.json'), 'w+',encoding='utf-8') as json_fi
     json.dump(data, json_file, ensure_ascii = False, indent='\t')
 
 print('뉴스기사 스크래핑 끝')
-
+'''
 
 '''
 html3 = """<html> <head><title>test  site</title></head> <body><p>test</p> <p>test1</p> <p>test2</p> </body></html>"""
-
 soup3 = BeautifulSoup(html3, 'lxml')
 print(soup3.prettify())  # html 구조로 이쁘게 보여주기
+'''
 
+'''
 #=========================== 네이버 쇼핑 제이슨
 file = open("./naver.json", "w")
 
@@ -66,7 +67,7 @@ for i in range(0,cnt) :
     file.write(json.dumps(naver))
 
 file.close()
-
+'''
 #===========================
 # 웹 페이지 읽어오기
 req = urlopen("http://www.hanbit.co.kr/store/books/full_book_list.html")
@@ -85,7 +86,6 @@ with open("booklist.json", "w", encoding="utf-8") as f:
         data.append({"BookName": title, "Link": url})
         # 데이터 json 형태로 출력
         print(json.dumps(data, ensure_ascii=False, indent=2))
-
+        
     # 데이터 변형 및 추가
     json.dump(data, f, ensure_ascii=False, indent=2)
-'''
