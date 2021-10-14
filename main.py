@@ -1,17 +1,17 @@
 from bs4 import BeautifulSoup
 
-html1 = """<p>test</p>"""
+html1 = """<p>test1</p>"""
 soup1 = BeautifulSoup(html1, 'lxml')
 print(soup1)
 
 
-html2 = """<html><p>test</p></html>"""
+html2 = """<html><p>test2</p></html>"""
 soup2 = BeautifulSoup(html2, 'lxml')
 print(soup2)
 
-html2 = """<body><p>test</p></body>"""
-soup2 = BeautifulSoup(html2, 'lxml')
-print(soup2)
+html3 = """<body><p>test3</p></body>"""
+soup3 = BeautifulSoup(html3, 'lxml')
+print(soup3)
 
 ''' 실해한 코드
 from bs4 import BeautifulSoup
