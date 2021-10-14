@@ -22,4 +22,4 @@ def upload_github_issue(repo, title, body):
     :return: None
     """
     repo.create_issue(title=title, body=body)
-    repo.create_file('test.txt')
+    repo.create_file("test.txt", "commit message", "content of the file")
