@@ -25,7 +25,7 @@ for title in datas:
     url = 'http:'+title.find('a')['href']
     data[name] = url
 
-with open(os.path.join(./master, 'rank.json'), 'w+',encoding='utf-8') as json_file:
+with open(os.path.join(BASE_DIR, 'rank.json'), 'w+',encoding='utf-8') as json_file:
 
 print('리그 기록 스크래핑 끝')
 
