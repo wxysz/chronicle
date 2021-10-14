@@ -7,15 +7,19 @@ import re
 from urllib.request import urlopen
 from html import unescape
 
-BASE_DIR = os.path.dirname(os.path.abspath(__file__))
-print('리그 기록 스크래핑 시작')
 
-req = requests.get('https://kleague.com/record/team.do')
+#datas = soup.select(    'div.sub-contents-wrap > div > div:nth-child(2) > table'    )
+
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+
+print('뉴스기사 스크래핑 시작')
+
+req = requests.get('https://www.yna.co.kr/safe/news')
 req.encoding= None
 html = req.content
 soup = BeautifulSoup(html, 'html.parser')
 datas = soup.select(
-    'div.sub-contents-wrap > div > div:nth-child(2) > table'
+    'div.contents > div.content01 > div > ul > li >article > div >h3'
     )
 
 data = {}
@@ -25,9 +29,11 @@ for title in datas:
     url = 'http:'+title.find('a')['href']
     data[name] = url
 
-with open(os.path.join(BASE_DIR, 'rank.json'), 'w+',encoding='utf-8') as json_file:
-json.dump(data, json_file, ensure_ascii = False, indent='\t')
-print('리그 기록 스크래핑 끝')
+with open(os.path.join(BASE_DIR, 'news.json'), 'w+',encoding='utf-8') as json_file:
+    json.dump(data, json_file, ensure_ascii = False, indent='\t')
+
+print('뉴스기사 스크래핑 끝')
+
 
 '''
 html3 = """<html> <head><title>test  site</title></head> <body><p>test</p> <p>test1</p> <p>test2</p> </body></html>"""
