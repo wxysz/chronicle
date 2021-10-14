@@ -7,7 +7,7 @@ import re
 from urllib.request import urlopen
 from html import unescape
 
-ASE_DIR = os.path.dirname(os.path.abspath(__file__))
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 print('리그 기록 스크래핑 시작')
 
 req = requests.get('https://kleague.com/record/team.do')
@@ -25,9 +25,8 @@ for title in datas:
     url = 'http:'+title.find('a')['href']
     data[name] = url
 
-#with open(os.path.join(./master, 'rank.json'), 'w+',encoding='utf-8') as json_file:
-with open('rank.json', 'w+',encoding='utf-8') as json_file:
-print(json.dumps(data, ensure_ascii=False, indent=2))
+with open(os.path.join(./master, 'rank.json'), 'w+',encoding='utf-8') as json_file:
+
 print('리그 기록 스크래핑 끝')
 
 '''
