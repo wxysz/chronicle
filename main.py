@@ -6,6 +6,7 @@ import sys
 import re
 from urllib.request import urlopen
 from html import unescape
+import pandas as pd
 
 #datas = soup.select(    'div.sub-contents-wrap > div > div:nth-child(2) > table'    )
 
@@ -27,12 +28,17 @@ for title in datas:
     name = title.find_all('a')[0].text
     url = 'http:'+title.find('a')['href']
     data[name] = url
-    
+    data.append([name, url]) # 추가
+
 with open(os.path.join(BASE_DIR, 'rank.json'), 'w+',encoding='utf-8') as json_file:
     json.dump(data, json_file, ensure_ascii = False, indent='\t')
 
-data.to_json('github.json')
-    
+# DataFrame에 저장 
+df = pd.DataFrame(columns=['제목', '주소'], data=data) 
+
+# 확인용 출력 
+print(df)
+
 print('뉴스기사 스크래핑 끝')
 
 
