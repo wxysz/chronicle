@@ -29,10 +29,10 @@ def extract_book_data(soup):
 
     for new_book in new_books:
         book_name = new_book.select("a")[0].text
-        url_suffix = new_book.select("a")[1].attrs['href']
-        url = url_prefix + url_suffix
+        url_suffix1 = new_book.select("a")[1].attrs['href']
+        url = url_prefix + url_suffix1
         price = new_book.select(".priceB")[0].text
-        writer = new_book.select(".aupu")[0].text
+        writer = new_book.select(".aupu")[1].text
 
         content = f"<a href={url}>" + book_name + "</a>" + ", " + writer + ", " + price + "<br/>\n"
         upload_contents += content
