@@ -1,6 +1,7 @@
 from bs4 import BeautifulSoup
 import requests
-import json,re
+import json
+import re
 from urllib.request import urlopen
 from html import unescape
 
