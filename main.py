@@ -27,8 +27,7 @@ for title in datas:
 
 #with open(os.path.join(./master, 'rank.json'), 'w+',encoding='utf-8') as json_file:
 with open('rank.json', 'w+',encoding='utf-8') as json_file:
-    json.dump(data, json_file, ensure_ascii = False, indent='\t')
-
+print(json.dumps(data, ensure_ascii=False, indent=2))
 print('리그 기록 스크래핑 끝')
 
 '''
