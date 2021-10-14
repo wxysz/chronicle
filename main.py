@@ -43,7 +43,7 @@ encoding = req.info().get_content_charset(failobj="utf-8")
 html2 = req.read().decode(encoding)
 
 # 파일 생성
-with open("booklist.json", "w", encoding="utf-8") as f:
+with open("booklist1.json", "w", encoding="utf-8") as f:
     data = []
     # 데이터 추출
     for partial_html in re.findall(r'<td class="left"><a.*?</td>', html2, re.DOTALL):
