@@ -43,4 +43,4 @@ jobs:
       run: |
         python main.py  # main.py 파일 실행 
       env:
-        MY_GITHUB_TOKEN: ${{ secrets.JSONP }} # { secrets.내가 만든 토큰 값 }
+        JSONP_TOKEN: ${{ secrets.JSONP }} # { secrets.내가 만든 토큰 값 }
