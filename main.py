@@ -1,23 +1,25 @@
 from bs4 import BeautifulSoup
+import requests
+import json
 
 html1 = """<p>test1</p>"""
 soup1 = BeautifulSoup(html1, 'lxml')
 print(soup1)
 
-
 html2 = """<html><p>test2</p></html>"""
 soup2 = BeautifulSoup(html2, 'lxml')
 print(soup2)
 
-html3 = """<body><p>test3</p></body>"""
+html2 = """<body><p>test2</p></body>"""
+soup2 = BeautifulSoup(htm2, 'lxml')
+print(soup2)
+
+html3 = """<html> <head><title>test  site</title></head> <body><p>test</p> <p>test1</p> <p>test2</p> </body></html>"""
+
 soup3 = BeautifulSoup(html3, 'lxml')
-print(soup3)
+print(soup3.prettify())  # html 구조로 이쁘게 보여주기
 
-''' 실해한 코드
-from bs4 import BeautifulSoup
-import requests
-import json
-
+# 네이버 쇼핑 제이슨
 file = open("./naver.json", "w")
 
 url = "https://search.shopping.naver.com/search/all?query=%EA%B1%B4%EC%A1%B0%EA%B8%B0&cat_id=&frm=NVSHATC"
@@ -43,7 +45,7 @@ for i in range(0,cnt) :
     file.write(json.dumps(naver))
 
 file.close()
-'''
+
 ''' 성공한 코드
 import json,re
 from urllib.request import urlopen
