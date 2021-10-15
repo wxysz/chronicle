@@ -8,10 +8,10 @@ from urllib.request import urlopen
 from html import unescape
 
     kleague_club_ranking_url = "https://kleague.com/api/clubRank.do"
-    jsonObject = json.loads(kleague_club_ranking_url)
-    jsonArray = jsonObject.get("data")
-    for list in jsonArray:
-         print(list)
+#    jsonObject = json.loads(kleague_club_ranking_url)
+#    jsonArray = jsonObject.get("data")
+#    for list in jsonArray:
+#         print(list)
             
 #datas = soup.select(    'div.sub-contents-wrap > div > div:nth-child(2) > table'    )
 '''
