@@ -7,12 +7,7 @@ import re
 from urllib.request import urlopen
 from html import unescape
 
-#    kleague_club_ranking_url = "https://kleague.com/api/clubRank.do"
-#    jsonObject = json.loads(kleague_club_ranking_url)
-#    jsonArray = jsonObject.get("data")
-#    for list in jsonArray:
-#         print(list)
-            
+#datas = soup.select("div.ranking")
 #datas = soup.select(    'div.sub-contents-wrap > div > div:nth-child(2) > table'    )
 '''
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
@@ -76,11 +71,16 @@ file.close()
 '''
 #===========================
 # 웹 페이지 읽어오기
-req1 = urlopen("https://kleague.com/api/clubRank.do")
-
 req = urlopen("http://www.hanbit.co.kr/store/books/full_book_list.html")
 encoding = req.info().get_content_charset(failobj="utf-8")
 html2 = req.read().decode(encoding)
+
+#    kleague_club_ranking_url = "https://kleague.com/api/clubRank.do"
+#    jsonObject = json.loads(kleague_club_ranking_url)
+#    jsonArray = jsonObject.get("data")
+#    for list in jsonArray:
+#         print(list)
+
 
 # 파일 생성
 with open("booklist.json", "w", encoding="utf-8") as f:
