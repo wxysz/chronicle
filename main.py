@@ -101,8 +101,11 @@ with open("booklist.json", "w", encoding="utf-8") as f:
 '''
 
 
+
+
+
 url = 'https://irus.jisc.ac.uk/api/sushilite/v1_7/GetReport/?Report=IR1&Release=4&RequestorID=Cambridge&BeginDate=2020-01&EndDate=2020-05&ItemIdentifier=irusuk%3A1861749&Granularity=Monthly&Pretty=Pretty'
-html = request.urlopen(url).read()
+html1 = requests.get(url)
 soup = BeautifulSoup(html,'html.parser')
 site_json=json.loads(soup.text)
 for itemIdentifier in  site_json["ReportResponse"]["Report"]["Report"]['Customer']["ReportItems"]:
