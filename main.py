@@ -69,6 +69,8 @@ for i in range(0,cnt) :
 
 file.close()
 '''
+
+'''
 #===========================
 # 웹 페이지 읽어오기
 req = urlopen("http://www.hanbit.co.kr/store/books/full_book_list.html")
@@ -80,7 +82,6 @@ html2 = req.read().decode(encoding)
 #    jsonArray = jsonObject.get("data")
 #    for list in jsonArray:
 #         print(list)
-
 
 # 파일 생성
 with open("booklist.json", "w", encoding="utf-8") as f:
@@ -97,3 +98,13 @@ with open("booklist.json", "w", encoding="utf-8") as f:
         
     # 데이터 변형 및 추가
     json.dump(data, f, ensure_ascii=False, indent=2)
+'''
+
+
+url = 'https://irus.jisc.ac.uk/api/sushilite/v1_7/GetReport/?Report=IR1&Release=4&RequestorID=Cambridge&BeginDate=2020-01&EndDate=2020-05&ItemIdentifier=irusuk%3A1861749&Granularity=Monthly&Pretty=Pretty'
+html = request.urlopen(url).read()
+soup = BeautifulSoup(html,'html.parser')
+site_json=json.loads(soup.text)
+for itemIdentifier in  site_json["ReportResponse"]["Report"]["Report"]['Customer']["ReportItems"]:
+    for itemPerformance in itemIdentifier["ItemPerformance"]:
+        print(itemPerformance["Instance"]["Count"])
