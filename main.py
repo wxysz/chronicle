@@ -131,7 +131,7 @@ for league_ranking in rank_zip:
         
 file_path = "./rank.json"
 json_data = {}
-with open(rank_zip, "r") as json_file:
+with open(file_path, "r") as json_file:
     json_data = json.load(json_file)
 
 json_data.append(rank_zip)
