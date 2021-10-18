@@ -29,7 +29,7 @@ for title in datas:
     url = 'http:'+title.find('a')['href']
     data[name] = url
 
-with open(os.path.join(BASE_DIR, 'rank.json'), 'w+', encoding='utf-8') as json_file:
+with open(os.path.join(BASE_DIR, 'news.txt'), 'w+', encoding='utf-8') as json_file:
     json.dump(data, json_file, ensure_ascii = False, indent='\t')
 
 print('뉴스기사 스크래핑 끝')
