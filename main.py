@@ -114,11 +114,11 @@ data['posts'].append({
     "url": "https://codechacha.com/ko/android-q-scoped-storage/",
     "draft": "false"
 })
-print(data)
 
 with open(file_path, 'w') as outfile:
-    json.dump(data, outfile)
+    json.dump(data, outfile, ensure_ascii=False, indent="\t")
     
+print(json.dumps(data, outfile, ensure_ascii=False, indent="\t"))
 
 # https://www.python2.net/questions-763617.htm
 '''
@@ -151,12 +151,12 @@ rank_zip = rank1 + rank2
 league_rank = dict()
 league_rank = rank_zip
 with open('rank.json', 'w+', encoding='utf-8') as make_file:
-    json.dump(rank_zip, make_file, indent="\t")
+    json.dump(rank_zip, make_file, ensure_ascii=False, indent="\t")
     
 with open('rank.json', 'r') as read_file:
     json_data = json.load(read_file)
-    json.dumps(json_data, indent="\t")
-#print(json.dumps(json_data, indent="\t") )
+    json.dumps(json_data, ensure_ascii=False, indent="\t")
+#print(json.dumps(json_data, ensure_ascii=False, indent="\t") )
 '''
 
 '''    
