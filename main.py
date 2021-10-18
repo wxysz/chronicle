@@ -9,7 +9,7 @@ from html import unescape
 
 #datas = soup.select("div.ranking")
 #datas = soup.select(    'div.sub-contents-wrap > div > div:nth-child(2) > table'    )
-'''
+
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 
 print('뉴스기사 스크래핑 시작')
@@ -29,11 +29,11 @@ for title in datas:
     url = 'http:'+title.find('a')['href']
     data[name] = url
 
-with open(os.path.join(BASE_DIR, 'rank.json'), 'w+',encoding='utf-8') as json_file:
+with open(os.path.join(BASE_DIR, 'rank.json'), 'w+', encoding='utf-8') as json_file:
     json.dump(data, json_file, ensure_ascii = False, indent='\t')
 
 print('뉴스기사 스크래핑 끝')
-'''
+
 
 '''
 html3 = """<html> <head><title>test  site</title></head> <body><p>test</p> <p>test1</p> <p>test2</p> </body></html>"""
