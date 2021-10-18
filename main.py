@@ -120,6 +120,7 @@ req2 = requests.get(url2)
 html2 = req2.text
 soup2 = BeautifulSoup(html2,'html.parser')
 rank_json=json.loads(soup2.text)
-for ranking in rank_json["data"]["league*"]:
-        print(ranking["teamName"])
+for ranking in rank_json["data"]:
+        print(ranking["league1"]["teamName"])
+        print(ranking["league2"]["teamName"])
 
