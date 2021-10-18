@@ -125,6 +125,7 @@ soup2 = BeautifulSoup(html2,'html.parser')
 rank_json=json.loads(soup2.text)
 rank1 = rank_json["data"]["league1"]
 rank2 = rank_json["data"]["league2"]
-for league1_ranking in rank1:
-        print(json.dumps(league1_ranking, ensure_ascii=False, indent=2))
+rank_zip = rank1 + rank2
+for league_ranking in rank_zip:
+        print(json.dumps(league_ranking, ensure_ascii=False, indent=2))
         
