@@ -115,6 +115,7 @@ for itemIdentifier in site_json["ReportResponse"]["Report"]["Report"]['Customer'
 '''
         # ?leagueId=" + leagueId + "&year=" + year + "&stadium=" + stadium + "&recordType=" + recordType
         # https://kleague.com/record/teamRank.do?leagueId=1&year=2021&stadium=all&recordType=null
+
         
 rank1 = []
 rank2 = []
@@ -126,15 +127,25 @@ rank_json=json.loads(soup2.text)
 rank1 = rank_json["data"]["league1"]
 rank2 = rank_json["data"]["league2"]
 rank_zip = rank1 + rank2
-for league_ranking in rank_zip:
-        print(json.dumps(league_ranking, ensure_ascii=False, indent=2))
+#for league_ranking in rank_zip:
+#        print(json.dumps(league_ranking, ensure_ascii=False, indent="\t"))
+        
+league_rank = dict()
+league_rank = rank_zip
+with open('rank.json', 'w', encoding='utf-8') as make_file:
+    json.dump(league_rank, make_file, indent="\t")
+    
+with open('rank.json', 'r') as f:
+    json_data = json.load(f)
+print(json.dumps(json_data, indent="\t") )
 
+'''
 with open('rank.json', 'r') as f:
 
     json_data = json.load(f)
 
-print(json.dumps(json_data, ensure_ascii=False, indent=2))
-
+print(json.dumps(json_data, ensure_ascii=False, indent="\t"))
+'''
 '''    
 json_data = {}
 file_path = "./rank.json"
