@@ -121,6 +121,9 @@ with open(file_path, 'w') as outfile:
 
 
 # https://www.python2.net/questions-763617.htm
+# https://devpouch.tistory.com/33
+
+
 '''
 url1 = 'https://irus.jisc.ac.uk/api/sushilite/v1_7/GetReport/?Report=IR1&Release=4&RequestorID=Cambridge&BeginDate=2020-01&EndDate=2020-05&ItemIdentifier=irusuk%3A1861749&Granularity=Monthly&Pretty=Pretty'
 req1 = requests.get(url1)
