@@ -100,7 +100,7 @@ with open("booklist.json", "w", encoding="utf-8") as f:
     json.dump(data, f, ensure_ascii=False, indent=2)
 '''
 
-file_path = "sample.json"
+file_path = "rank.json"
 
 data = {}
 data['posts'] = []
@@ -118,7 +118,7 @@ data['posts'].append({
 with open(file_path, 'w') as outfile:
     json.dump(data, outfile, ensure_ascii=False, indent="\t")
     
-print(json.dump(data, outfile, ensure_ascii=False, indent="\t"))
+
 
 # https://www.python2.net/questions-763617.htm
 '''
