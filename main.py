@@ -100,7 +100,25 @@ with open("booklist.json", "w", encoding="utf-8") as f:
     json.dump(data, f, ensure_ascii=False, indent=2)
 '''
 
+file_path = "./sample.json"
 
+data = {}
+data['posts'] = []
+data['posts'].append({
+    "title": "How to get stroage size",
+    "url": "https://codechacha.com/ko/get-free-and-total-size-of-volumes-in-android/",
+    "draft": "false"
+})
+data['posts'].append({
+    "title": "Android Q, Scoped Storage",
+    "url": "https://codechacha.com/ko/android-q-scoped-storage/",
+    "draft": "false"
+})
+print(data)
+
+with open(file_path, 'w') as outfile:
+    json.dump(data, outfile)
+    
 
 # https://www.python2.net/questions-763617.htm
 '''
@@ -116,7 +134,7 @@ for itemIdentifier in site_json["ReportResponse"]["Report"]["Report"]['Customer'
         # ?leagueId=" + leagueId + "&year=" + year + "&stadium=" + stadium + "&recordType=" + recordType
         # https://kleague.com/record/teamRank.do?leagueId=1&year=2021&stadium=all&recordType=null
 
-        
+'''
 rank1 = []
 rank2 = []
 url2 = 'https://kleague.com/api/clubRank.do'
@@ -139,7 +157,7 @@ with open('rank.json', 'r') as read_file:
     json_data = json.load(read_file)
     json.dumps(json_data, indent="\t")
 #print(json.dumps(json_data, indent="\t") )
-
+'''
 
 '''    
 json_data = {}
