@@ -118,7 +118,7 @@ data['posts'].append({
 with open(file_path, 'w') as outfile:
     json.dump(data, outfile, ensure_ascii=False, indent="\t")
     
-print(json.dumps(data, outfile, ensure_ascii=False, indent="\t"))
+print(json.dump(data, outfile, ensure_ascii=False, indent="\t"))
 
 # https://www.python2.net/questions-763617.htm
 '''
