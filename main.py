@@ -126,16 +126,14 @@ rank_json=json.loads(soup2.text)
 rank1 = rank_json["data"]["league1"]
 rank2 = rank_json["data"]["league2"]
 rank_zip = rank1 + rank2
-for league_ranking in rank_zip:
-        print(json.dumps(league_ranking, ensure_ascii=False, indent=2))
-        
 file_path = "./rank.json"
 json_data = {}
-with open(file_path, "r") as json_file:
-    json_data = json.load(json_file)
+for league_ranking in rank_zip:
+#        print(json.dumps(league_ranking, ensure_ascii=False, indent=2))
+    with open(file_path, "r") as json_file:
+        json_data = json.load(json_file)
+        json_data.append(rank_zip)
 
-json_data.append(rank_zip)
-
-with open(file_path, 'w') as outfile:
-    json.dumps(outfile, ensure_ascii=False, indent=4)
+    with open(file_path, 'w') as outfile:
+        json.dumps(outfile, ensure_ascii=False, indent=4)
     
