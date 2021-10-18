@@ -134,8 +134,8 @@ json_data = {}
 with open(rank_zip, "r") as json_file:
     json_data = json.load(json_file)
 
-json_data.append()
+json_data.append(rank_zip)
 
 with open(file_path, 'w') as outfile:
-    json.dump(json_data, outfile, indent=4)
+    json.dumps(outfile, ensure_ascii=False, indent=4)
     
