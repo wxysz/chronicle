@@ -129,3 +129,13 @@ rank_zip = rank1 + rank2
 for league_ranking in rank_zip:
         print(json.dumps(league_ranking, ensure_ascii=False, indent=2))
         
+file_path = "./rank.json"
+json_data = {}
+with open(rank_zip, "r") as json_file:
+    json_data = json.load(json_file)
+
+json_data.append()
+
+with open(file_path, 'w') as outfile:
+    json.dump(json_data, outfile, indent=4)
+    
