@@ -103,7 +103,7 @@ with open("booklist.json", "w", encoding="utf-8") as f:
 
 
 # https://www.python2.net/questions-763617.htm
-
+'''
 url1 = 'https://irus.jisc.ac.uk/api/sushilite/v1_7/GetReport/?Report=IR1&Release=4&RequestorID=Cambridge&BeginDate=2020-01&EndDate=2020-05&ItemIdentifier=irusuk%3A1861749&Granularity=Monthly&Pretty=Pretty'
 req1 = requests.get(url1)
 html1 = req1.text
@@ -112,7 +112,7 @@ site_json=json.loads(soup1.text)
 for itemIdentifier in site_json["ReportResponse"]["Report"]["Report"]['Customer']["ReportItems"]:
     for itemPerformance in itemIdentifier["ItemPerformance"]:
         print(itemPerformance["Instance"]["Count"])
-
+'''
         # ?leagueId=" + leagueId + "&year=" + year + "&stadium=" + stadium + "&recordType=" + recordType
         # https://kleague.com/record/teamRank.do?leagueId=1&year=2021&stadium=all&recordType=null
 url2 = 'https://kleague.com/api/clubRank.do'
@@ -120,6 +120,6 @@ req2 = requests.get(url2)
 html2 = req2.text
 soup2 = BeautifulSoup(html2,'html.parser')
 rank_json=json.loads(soup2.text)
-for ranking in rank_json["data"]["league1"]:
+for ranking in rank_json["data"]["league*"]:
         print(ranking["teamName"])
 
