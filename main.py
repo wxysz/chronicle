@@ -109,6 +109,15 @@ req1 = requests.get(url1)
 html1 = req1.text
 soup1 = BeautifulSoup(html1,'html.parser')
 site_json=json.loads(soup1.text)
-for itemIdentifier in  site_json["ReportResponse"]["Report"]["Report"]['Customer']["ReportItems"]:
+for itemIdentifier in site_json["ReportResponse"]["Report"]["Report"]['Customer']["ReportItems"]:
     for itemPerformance in itemIdentifier["ItemPerformance"]:
         print(itemPerformance["Instance"]["Count"])
+
+url2 = 'https://kleague.com/record/teamRank.do'
+req2 = requests.get(url2)
+html2 = req2.text
+soup2 = BeautifulSoup(html2,'html.parser')
+rank_json=json.loads(soup2.text)
+for ranking in rank_json["data"]["teamRank"]:
+        print(ranking["teamName"])
+
