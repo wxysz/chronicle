@@ -113,7 +113,9 @@ for itemIdentifier in site_json["ReportResponse"]["Report"]["Report"]['Customer'
     for itemPerformance in itemIdentifier["ItemPerformance"]:
         print(itemPerformance["Instance"]["Count"])
 
-url2 = 'https://kleague.com/record/teamRank.do'
+        # ?leagueId=" + leagueId + "&year=" + year + "&stadium=" + stadium + "&recordType=" + recordType
+        
+url2 = 'https://kleague.com/record/teamRank.do?leagueId=1&year=2021&stadium=all&recordType=null'
 req2 = requests.get(url2)
 html2 = req2.text
 soup2 = BeautifulSoup(html2,'html.parser')
