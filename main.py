@@ -119,7 +119,7 @@ url2 = 'https://kleague.com/api/clubRank.do'
 req2 = requests.get(url2)
 html2 = req2.text
 soup2 = BeautifulSoup(html2,'html.parser')
-rank_json=json.loads(soup2.text)
-for ranking in rank_json["data"]:
-        print(json.dumps(ranking, ensure_ascii=False, indent=2))
-
+rank_json=json.loads(soup2.text)    
+for league1_ranking, league2_ranking in rank_json(["data"]["league1"], ["data"]["league2"]):
+        print(json.dumps(league1_ranking+league2_ranking, ensure_ascii=False, indent=2))
+        
