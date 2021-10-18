@@ -172,4 +172,34 @@ file_path = "./rank.json"
     with open("rank.json", 'w') as outfile:
         json.dumps(outfile, ensure_ascii=False, indent=2)
 '''
+'''
+url = 'https://kleague.com/api/clubRank.do'
+req = requests.get(url)
+html = req.content
+soup = BeautifulSoup(html, 'html.parser')
+rank_json=json.loads(soup.text)
+
+rank1 = []
+rank2 = []
+rank1 = rank_json["data"]["league1"]
+rank2 = rank_json["data"]["league2"]
+rank_zip = rank1 + rank2
+
+league_ranking = json.dumps(rank_zip, ensure_ascii=False, indent="\t")
+
+with open('rank.json', 'w+',encoding='utf-8') as write_file:
+    json.dump(league_ranking, write_file, ensure_ascii = False, indent='\t')
+    
+
+
+for league_ranking in rank_zip:
+    json.dumps(league_ranking, ensure_ascii=False, indent="\t")
+    print(json.dumps(league_ranking, ensure_ascii=False, indent="\t"))
+# with open(os.path.join(BASE_DIR, 'rank.json'), "r") as modify_json:
+#    rank_zip
+        
+with open(os.path.join(BASE_DIR, 'rank.json'), 'w+',encoding='utf-8') as write_file:
+    json.dump(rank_zip, write_file, ensure_ascii = False, indent='\t')
+    print(json.dump(league_ranking, write_file, ensure_ascii = False, indent='\t'))
+'''
     
