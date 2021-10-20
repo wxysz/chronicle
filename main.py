@@ -22,14 +22,12 @@ datas = soup.select(
     'div.contents > div.content01 > div > ul > li >article > div >h3'
     )
 
-data = {}
-
 for title in datas:   
     name = title.find_all('a')[0].text
     url = 'http:'+title.find('a')['href']
     data[name] = url
 
-with open(os.path.join(BASE_DIR, 'news.json'), 'w+',encoding='utf-8') as json_file:
+with open(os.path.join(BASE_DIR, '/news.json'), 'w+',encoding='utf-8') as json_file:
     json.dump(data, json_file, ensure_ascii = False, indent='\t')
 
 seoul_timezone = timezone('Asia/Seoul')
@@ -39,7 +37,8 @@ today_date = today.strftime("%Y년 %m월 %d일")
 access_token = os.environ['MY_GITHUB_TOKEN']
 repository_name = "database" # 내 저장소 이름 필수로 바꿔야함 
 issue_title = f"리그 순위표({today_date})"
-repo = Github(access_token).get_user().get_repo(repository_name)
+g = Github(access_token)
+repo = g.get_user().get_repo(repository_name)
 repo.create_issue(title=issue_title, body=data)
 
 print('뉴스기사 스크래핑 끝')
