@@ -21,6 +21,7 @@ soup = BeautifulSoup(html, 'html.parser')
 datas = soup.select(
     'div.contents > div.content01 > div > ul > li >article > div >h3'
     )
+data = ''
 
 for title in datas:   
     name = title.find_all('a')[0].text
