@@ -28,6 +28,10 @@ for title in datas:
     url = 'http:'+title.find('a')['href']
     data[name] = url
 
+seoul_timezone = timezone('Asia/Seoul')
+today = datetime.now(seoul_timezone)
+today_date = today.strftime("%Y년 %m월 %d일")
+
 contents = ''
 contents += data
 
