@@ -40,10 +40,12 @@ repo = g.get_user().get_repo(repository_name)
 
 issue_title = f"YES24 IT 신간 도서 알림({today_date})"
 data_json = json.dumps(data, indent=2)
-repo.create_issue(title=issue_title, body=data_json)
+# repo.create_issue(title=issue_title, body=data_json)
 
 with open(os.path.join(BASE_DIR, 'news.json'), 'w+',encoding='utf-8') as json_file:
-    json.dump(data, json_file, ensure_ascii = False, indent='\t')
+   reg = json.dump(data, json_file, ensure_ascii = False, indent='\t')
+
+print(reg)
 
 print('뉴스기사 스크래핑 끝')
 
