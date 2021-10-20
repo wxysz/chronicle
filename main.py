@@ -38,7 +38,7 @@ today_date = today.strftime("%Y년 %m월 %d일")
 
 access_token = os.environ['MY_GITHUB_TOKEN']
 repository_name = "database" # 내 저장소 이름 필수로 바꿔야함 
-
+issue_title = f"리그 순위표({today_date})"
 repo = Github(access_token).get_user().get_repo(repository_name)
 repo.create_issue(title=issue_title, body=data)
 
