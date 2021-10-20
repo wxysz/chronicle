@@ -54,4 +54,4 @@ jobs:
       uses: ad-m/github-push-action@master
       with:
         branch: 'master'
-        MY_GITHUB_TOKEN: ${{ secrets.WEB_CRAWLER_KEY }}
+        MY_GITHUB_TOKEN: $
