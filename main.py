@@ -32,9 +32,6 @@ seoul_timezone = timezone('Asia/Seoul')
 today = datetime.now(seoul_timezone)
 today_date = today.strftime("%Y년 %m월 %d일")
 
-contents = ''
-contents += data
-
 access_token = os.environ['MY_GITHUB_TOKEN']
 repository_name = "chronicle" # 내 저장소 이름 필수로 바꿔야함 
 
@@ -42,7 +39,7 @@ g = Github(access_token)
 repo = g.get_user().get_repo(repository_name)
 
 issue_title = f"YES24 IT 신간 도서 알림({today_date})"
-repo.create_issue(title=issue_title, body=contents)
+repo.create_issue(title=issue_title, body=data)
 
 with open(os.path.join(BASE_DIR, '/news.json'), 'w+',encoding='utf-8') as json_file:
     json.dump(data, json_file, ensure_ascii = False, indent='\t')
