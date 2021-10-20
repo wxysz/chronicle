@@ -6,6 +6,8 @@ import sys
 import re
 from urllib.request import urlopen
 from html import unescape
+from datetime import datetime
+from pytz import timezone
 
 #datas = soup.select("div.ranking")
 #datas = soup.select(    'div.sub-contents-wrap > div > div:nth-child(2) > table'    )
@@ -31,7 +33,17 @@ for title in datas:
 
 with open(os.path.join(BASE_DIR, 'news.json'), 'w+',encoding='utf-8') as json_file:
     json.dump(data, json_file, ensure_ascii = False, indent='\t')
-    
+
+seoul_timezone = timezone('Asia/Seoul')
+today = datetime.now(seoul_timezone)
+today_date = today.strftime("%Y년 %m월 %d일")
+
+access_token = os.environ['MY_GITHUB_TOKEN']
+repository_name = "database" # 내 저장소 이름 필수로 바꿔야함 
+
+repo = Github(access_token).get_user().get_repo(repository_name)
+repo.create_issue(title=issue_title, body=data)
+
 print('뉴스기사 스크래핑 끝')
 
 
