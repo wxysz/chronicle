@@ -1,11 +1,9 @@
-from bs4 import BeautifulSoup
-import requests
-import json
 import os
 import sys
-import re
-from urllib.request import urlopen
-from html import unescape
+import requests
+import json
+from bs4 import BeautifulSoup
+from github import Github
 from datetime import datetime
 from pytz import timezone
 
