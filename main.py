@@ -11,7 +11,7 @@ from pytz import timezone
 #datas = soup.select(    'div.sub-contents-wrap > div > div:nth-child(2) > table'    )
 
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
-file_path = "rank.json"
+
 print('뉴스기사 스크래핑 시작')
 
 req = requests.get('https://www.yna.co.kr/safe/news')
@@ -42,7 +42,7 @@ issue_title = f"YES24 IT 신간 도서 알림({today_date})"
 data_json = json.dumps(data, indent=2)
 # repo.create_issue(title=issue_title, body=data_json)
 
-with open(os.path.join(BASE_DIR, file_path), 'w+',encoding='utf-8') as json_file:
+with open(os.path.join(BASE_DIR, 'news.json'), 'w+',encoding='utf-8') as json_file:
    reg = json.dump(data, json_file, ensure_ascii = False, indent='\t')
 
 print(reg)
