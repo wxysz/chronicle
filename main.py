@@ -15,7 +15,7 @@ html = req.content
 soup = BeautifulSoup(html, 'html.parser')
 rank = json.loads(soup.text)
 
-with open(os.path.join(BASE_DIR, 'rank.json'), 'a+', encoding="utf-8") as f:
+with open(os.path.join(BASE_DIR, 'rank.json'), 'w+', encoding="utf-8") as f:
     json.dump(rank, f, ensure_ascii = False, indent=2)
     
 seoul_timezone = timezone('Asia/Seoul')
