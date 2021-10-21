@@ -43,17 +43,20 @@ data_json = json.dumps(data, indent=2)
 # repo.create_issue(title=issue_title, body=data_json)
 
 with open(os.path.join(BASE_DIR, 'news.json'), 'w+',encoding='utf-8') as json_file:
-  reg = json.dump(data, json_file, ensure_ascii = False, indent='\t')
+  json.dump(data, json_file, ensure_ascii = False, indent='\t')
 
-print(data_json)
+
 
 print('뉴스기사 스크래핑 끝')
 
-r = requests.get('https://kleague.com/api/clubRank.do')
-p = r.text
-j = json.dumps(p, ensure_ascii=False)
+
+req1 = requests.get('https://kleague.com/api/clubRank.do')
+req1.encoding= None
+html1 = req1.content
+soup1 = BeautifulSoup(html1, 'html.parser')
+rank = soup1.select
 with open('rank.json', 'w+', encoding="utf-8") as f:
-    x = json.dump(j, f)
+    x = json.dump(rank, f)
 print(x)
 
 # https://www.python2.net/questions-763617.htm
