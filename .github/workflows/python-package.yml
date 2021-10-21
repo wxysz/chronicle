@@ -42,8 +42,8 @@ jobs:
     - name: run main.py
       run: |
         python main.py  # main.py 파일 실행 
-#      env:
-#        MY_GITHUB_TOKEN: ${{ secrets.WEB_CRAWLER_KEY }} # { secrets.내가 만든 토큰 값 }
+      env:
+        MY_GITHUB_TOKEN: ${{ secrets.WEB_CRAWLER_KEY }} # { secrets.내가 만든 토큰 값 }
     - name: Commits
       run: |
         git config --local user.email "your@email"
