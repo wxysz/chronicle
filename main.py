@@ -57,8 +57,8 @@ repo = g.get_user().get_repo(repository_name)
 # repo.create_issue(title=issue_title, body=rank)
 
 with open(os.path.join(BASE_DIR, 'rank.json'), 'w+', encoding="utf-8") as f:
-    json.dump(rank, f, ensure_ascii = False)
-    
+    json.dump(rank, f, ensure_ascii = False, indent=2)
+
 # https://www.python2.net/questions-763617.htm
 # https://devpouch.tistory.com/33
 
