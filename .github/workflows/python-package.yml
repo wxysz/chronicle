@@ -46,10 +46,8 @@ jobs:
         MY_GITHUB_TOKEN: ${{ secrets.WEB_CRAWLER_KEY }} # { secrets.내가 만든 토큰 값 }
     - name: Commits
       run: |
-        git config --local user.email "your@email"
-        git config --local user.name "Auto_Scraping_Name" # 커밋에 포함될 이름
         git add news.json
-        git commit -m "Auto - Update data with Scraping" # 커밋 메세지
+        git add rank.json
     - name: Push
       uses: ad-m/github-push-action@master
       with:
