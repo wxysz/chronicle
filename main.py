@@ -52,9 +52,9 @@ repository_name = "chronicle" # 내 저장소 이름 필수로 바꿔야함
 g = Github(access_token)
 repo = g.get_user().get_repo(repository_name)
 
-issue_title = f"리그 순위({today_date})"
+# issue_title = f"리그 순위({today_date})"
 
-repo.create_issue(title=issue_title, body=rank)
+# repo.create_issue(title=issue_title, body=rank)
 
 with open(os.path.join(BASE_DIR, 'rank.json'), 'w+', encoding="utf-8") as f:
     json.dump(rank, f, ensure_ascii = False)
