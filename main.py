@@ -40,7 +40,7 @@ repo = g.get_user().get_repo(repository_name)
 
 issue_title = f"YES24 IT 신간 도서 알림({today_date})"
 
-data1 = json.loads(soup1.text)
+data1 = json.loads(soup.text)
 data_json = json.dumps(data1, indent=2)
 repo.create_issue(title=issue_title, body=data_json)
 
@@ -58,7 +58,7 @@ html1 = req1.content
 soup1 = BeautifulSoup(html1, 'html.parser')
 rank = json.loads(soup1.text)
 with open(os.path.join(BASE_DIR, 'rank.json'), 'w+', encoding="utf-8") as f:
-    json.dump(rank, f, ensure_ascii = False,)
+    json.dump(rank, f, ensure_ascii = False)
 
 
 # https://www.python2.net/questions-763617.htm
