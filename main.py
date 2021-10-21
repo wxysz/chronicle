@@ -54,9 +54,9 @@ req1 = requests.get('https://kleague.com/api/clubRank.do')
 req1.encoding= None
 html1 = req1.content
 soup1 = BeautifulSoup(html1, 'html.parser')
-rank = soup1.select
-with open('rank.json', 'w+', encoding="utf-8") as f:
-    x = json.dump(rank, f)
+rank = json.loads(soup1.text)
+with open(os.path.join(BASE_DIR, 'rank.json'), 'w+', encoding="utf-8") as f:
+    x = json.dump(rank, f, ensure_ascii = False,)
 print(x)
 
 # https://www.python2.net/questions-763617.htm
