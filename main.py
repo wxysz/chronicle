@@ -49,6 +49,12 @@ print(data_json)
 
 print('뉴스기사 스크래핑 끝')
 
+r = requests.get('https://kleague.com/api/clubRank.do')
+p = r.text
+j = json.dumps(p, ensure_ascii=False)
+with open('rank.json', 'w+', encoding="utf-8") as f:
+    x = json.dump(j, f)
+print(x)
 
 # https://www.python2.net/questions-763617.htm
 # https://devpouch.tistory.com/33
