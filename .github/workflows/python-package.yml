@@ -9,7 +9,8 @@ on:
   pull_request:
     branches: [ master ]
   schedule:
-    - cron: '00 09 * * *' # 매일 9시마다 실행
+    - cron:  '59 13 * * *' # 주기적으로 실행하기 위한 스케줄링 현재 한국시간 저녁 11시에 맞춤
+                           # UST 가 default. UST 23:00는 한국시간 08:01 약 9시간 1분 차이남
     
 jobs:
   build:
@@ -48,8 +49,6 @@ jobs:
       run: |
         git config --local user.email "your@email"
         git config --local user.name "Auto_Scraping_Name" # 커밋에 포함될 이름
-        git fetch --all
-        git reset --hard origin/master
         git add rank.json
         git commit -m "Auto - Update data with Scraping" # 커밋 메세지
     - name: Push
