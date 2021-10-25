@@ -6,6 +6,7 @@ from bs4 import BeautifulSoup
 from github import Github
 from datetime import datetime
 from pytz import timezone
+from panadas import display, DataFrame
 
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 
@@ -17,7 +18,7 @@ rank = json.loads(soup.text)
 
 with open(os.path.join(BASE_DIR, 'rank.json'), 'w+', encoding="utf-8") as f:
     json.dump(rank, f, ensure_ascii = False, indent=2)
-    
+        
 seoul_timezone = timezone('Asia/Seoul')
 today = datetime.now(seoul_timezone)
 today_date = today.strftime("%Y년 %m월 %d일")
