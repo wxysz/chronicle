@@ -49,7 +49,8 @@ jobs:
       run: |
         git config --local user.email "your@email"
         git config --local user.name "Auto_Web_Crawler" # 커밋에 포함될 이름
-        git add rank.json
+        git pull
+        git add .
         git commit -m "Auto - Update data with Scraping" # 커밋 메세지
     - name: Push
       uses: ad-m/github-push-action@master
