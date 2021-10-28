@@ -30,30 +30,28 @@ repository_name = "chronicle" # 내 저장소 이름 필수로 바꿔야함
 g = Github(access_token)
 repo = g.get_user().get_repo(repository_name)
 
+# https://m.blog.naver.com/kiddwannabe/221811618848
 # http://throughkim.kr/2016/04/01/beautifulsoup/
 # https://www.kovo.co.kr/game/v-league/11210_team-ranking.asp # 남자 ?season=018&g_part=201&s_part=1 # 여자 ?season=018&g_part=201&s_part=2
-'''
+
 req1 = requests.get('https://www.kovo.co.kr/game/v-league/11210_team-ranking.asp?season=018&g_part=201&s_part=2')
 req1.encoding= None
 html1 = req.content
 soup1 = BeautifulSoup(html, "lxml")
-table_div = soup.find(id="wrp_lst mt10")
-tables = table_div.find_all("table")
-'''
-req1 = requests.get('http://dgucoop.dongguk.edu/store/store.php?w=4&l=2&j=0')
-req1.encoding= None
-soup1 = BeautifulSoup(html, "lxml")
-table_div = soup1.find(id="sdetail")
-tables = table_div.find_all("table")
-menu_table = tables[1]
-trs = menu_table.find_all('tr')
-sangrok_bakban_lunch = trs[8]
-tds = sangrok_bakban_lunch.find_all('td')
-mon = tds[3].span.string
-tue = tds[4].span.string
-wed = tds[5].span.string
-thu = tds[6].span.string
-fri = tds[7].span.string
 
-print(mon, tue, wed, thu, fri)
+# 현재 페이지에서 table 태그 모두 선택하기
+tables = soup1.select('table')
 
+# 하나의 테이블 태그 선택하기
+table = tables[0]
+
+# 테이블 html 정보를 문자열로 변경하기
+table_html = str(table)
+
+# 판다스의 read_html 로 테이블 정보 읽기
+table_df_list = pandas.read_html(table_html)
+
+# 데이터프레임 선택하기
+table_df = table_df_list[0]
+
+print(table_df)
