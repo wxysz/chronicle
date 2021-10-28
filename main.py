@@ -41,7 +41,7 @@ html1 = req.content
 soup1 = BeautifulSoup(html, "lxml")
 
 # 현재 페이지에서 table 태그 모두 선택하기
-tables = soup1.select('table')
+tables = soup1.select('#tab1 > div.wrp_lst.mt10')
 print(tables)
 '''
 # 하나의 테이블 태그 선택하기
