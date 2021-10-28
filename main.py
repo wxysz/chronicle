@@ -39,7 +39,7 @@ req1 = requests.get('https://www.kovo.co.kr/game/v-league/11210_team-ranking.asp
 req1.encoding= None
 html1 = req1.content
 soup1 = BeautifulSoup(html1, 'html.parser')
-datas = soup.select( #tab1 > div.wrp_lst.mt10 )
+datas = soup1.select( #tab1 > div.wrp_lst.mt10 )
 
 print(datas)
 '''
