@@ -42,7 +42,8 @@ soup1 = BeautifulSoup(html, "lxml")
 
 # 현재 페이지에서 table 태그 모두 선택하기
 tables = soup1.select('table')
-
+print(tables[0])
+'''
 # 하나의 테이블 태그 선택하기
 table = tables[0]
 
@@ -56,3 +57,4 @@ table_df_list = pandas.read_html(table_html)
 table_df = table_df_list[0]
 
 print(table_df)
+'''
