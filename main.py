@@ -6,6 +6,7 @@ from bs4 import BeautifulSoup
 from github import Github
 from datetime import datetime
 from pytz import timezone
+import pandas 
 
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 
