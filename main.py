@@ -15,6 +15,8 @@ html = req.content
 soup = BeautifulSoup(html, 'html.parser')
 rank = json.loads(soup.text)
 
+rank_json = json.dumps(rank, sort_keys=True)  # dict()를 str로 변경 rank, indent=2, sort_keys=True
+
 with open(os.path.join(BASE_DIR, 'rank.json'), 'w+', encoding="utf-8") as f:
     json.dump(rank, f, ensure_ascii = False, indent=2)
         
@@ -30,4 +32,4 @@ repo = g.get_user().get_repo(repository_name)
 
 file = repo.get_contents('rank.json')
 
-repo.update_file('rank.json', "file update", rank, file.sha)
+repo.update_file('rank.json', "file update", rank_json, file.sha)
