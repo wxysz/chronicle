@@ -27,3 +27,7 @@ repository_name = "chronicle" # 내 저장소 이름 필수로 바꿔야함
 
 g = Github(access_token)
 repo = g.get_user().get_repo(repository_name)
+
+file = repo.get_contents('rank.json')
+
+repo.update_file('rank.json', "file update", rank_json, file.sha)
