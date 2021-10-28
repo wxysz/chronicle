@@ -35,20 +35,4 @@ file = repo.get_contents('rank.json')
 # repo.update_file('rank.json', "file update", rank_json, file.sha)
 
 
-req1 = requests.get('https://www.kovo.co.kr/game/v-league/11210_team-ranking.asp?season=018&g_part=201&s_part=2')
-req1.encoding= None
-html1 = req1.content
-soup1 = BeautifulSoup(html1, 'html.parser')
-datas = soup1.select( #tab1 > div.wrp_lst.mt10 )
 
-print(datas)
-'''
-for title in datas:   
-    name = title.find_all('a')[0].text
-    url = 'http:'+title.find('a')['href']
-    data[name] = url
-
-with open(os.path.join(BASE_DIR, 'news.json'), 'w+',encoding='utf-8') as json_file:
-    json.dump(data, json_file, ensure_ascii = False, indent='\t')
-   ''' 
-# V_League_Rank = json.dumps(V_League, sort_keys=True)  # dict()를 str로 변경 rank, indent=2, sort_keys=True
