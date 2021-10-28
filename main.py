@@ -34,7 +34,7 @@ repo = g.get_user().get_repo(repository_name)
 req1 = requests.get('https://www.kovo.co.kr/game/v-league/11210_team-ranking.asp?season=018&g_part=201&s_part=2')
 req1.encoding= None
 html1 = req.content
-soup1 = BeautifulSoup(source, "lxml")
+soup1 = BeautifulSoup(html, "lxml")
 table_div = soup.find(id="wrp_lst mt10")
 
 
