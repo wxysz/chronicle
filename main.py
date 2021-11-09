@@ -29,11 +29,10 @@ today = datetime.now(seoul_timezone)
 # today_date = today.strftime("%Y년 %m월 %d일 %A요일")
 today_date_year = today.strftime("%Y")
 today_date_month = today.strftime("%m")
+today_date_day = today.strftime("%d")
 yyyy = int(today_date_year)
-
 mm = int(today_date_month)
-dd = 11
-
+dd = int(today_date_day)
 dotw = calendar.weekday(yyyy, mm, dd)
 
 print(days[dotw])
