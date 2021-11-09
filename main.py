@@ -24,6 +24,9 @@ with open(os.path.join(BASE_DIR, 'rank.json'), 'w+', encoding="utf-8") as f:
 seoul_timezone = timezone('Asia/Seoul')
 today = datetime.now(seoul_timezone)
 today_date = today.strftime("%Y년 %m월 %d일")
+dotw = today.strtime(%A요일)
+
+print(dotw)
 
 access_token = os.environ['MY_GITHUB_TOKEN']
 repository_name = "chronicle" # 내 저장소 이름 필수로 바꿔야함 
