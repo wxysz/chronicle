@@ -28,11 +28,12 @@ seoul_timezone = timezone('Asia/Seoul')
 today = datetime.now(seoul_timezone)
 # today_date = today.strftime("%Y년 %m월 %d일 %A요일")
 today_date_year = today.strftime("%Y")
-print(today_date_year)
 
 dsf = today_date_year
 
-yyyy = 2021
+print(dsf)
+
+yyyy = dsf
 mm = 9
 dd = 11
 
