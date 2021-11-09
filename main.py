@@ -23,12 +23,15 @@ with open(os.path.join(BASE_DIR, 'rank.json'), 'w+', encoding="utf-8") as f:
     json.dump(rank, f, ensure_ascii = False, indent=2)
         
 
-dotw = ["월요일", "화요일", "수요일", "목요일", "금요일", "토요일", "일요일"]
+days = ["월요일", "화요일", "수요일", "목요일", "금요일", "토요일", "일요일"]
 seoul_timezone = timezone('Asia/Seoul')
 today = datetime.now(seoul_timezone)
 today_date = today.strftime("%Y년 %m월 %d일 %A요일")
-
 print(today_date)
+
+dotw = calendar.weekday(2021, 11, 9)
+
+print(days[dotw])
 
 access_token = os.environ['MY_GITHUB_TOKEN']
 repository_name = "chronicle" # 내 저장소 이름 필수로 바꿔야함 
