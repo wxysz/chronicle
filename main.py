@@ -30,6 +30,8 @@ today = datetime.now(seoul_timezone)
 today_date_year = today.strftime("%Y")
 print(today_date_year)
 
+dsf = today_date_year
+
 yyyy = 2021
 mm = 9
 dd = 11
