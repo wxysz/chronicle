@@ -30,12 +30,16 @@ today = datetime.now(seoul_timezone)
 today_date_year = today.strftime("%Y")
 today_date_month = today.strftime("%m")
 today_date_day = today.strftime("%d")
+today_date_week = today.strftime("%A")
+'''
 yyyy = int(today_date_year)
 mm = int(today_date_month)
 dd = int(today_date_day)
 dotw = calendar.weekday(yyyy, mm, dd)
-
 print(days[dotw])
+'''
+print(today_date_week)
+print(f"({today_date_week})요")
 
 access_token = os.environ['MY_GITHUB_TOKEN']
 repository_name = "chronicle" # 내 저장소 이름 필수로 바꿔야함 
