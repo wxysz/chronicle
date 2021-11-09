@@ -29,7 +29,7 @@ today = datetime.now(seoul_timezone)
 # today_date = today.strftime("%Y년 %m월 %d일 %A요일")
 today_date_year = today.strftime("%Y")
 
-dsf = today_date_year
+dsf = int(today_date_year)
 
 print(dsf)
 
