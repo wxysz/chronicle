@@ -26,11 +26,12 @@ with open(os.path.join(BASE_DIR, 'rank.json'), 'w+', encoding="utf-8") as f:
 days = ["월요일", "화요일", "수요일", "목요일", "금요일", "토요일", "일요일"]
 seoul_timezone = timezone('Asia/Seoul')
 today = datetime.now(seoul_timezone)
-today_date = today.strftime("%Y년 %m월 %d일 %A요일")
-print(today_date)
+# today_date = today.strftime("%Y년 %m월 %d일 %A요일")
+today_date_year = today.strftime("%Y년)
+print(today_date_year)
 
 yyyy = 2021
-mm = 09
+mm = 9
 dd = 11
 
 dotw = calendar.weekday(yyyy, mm, dd)
