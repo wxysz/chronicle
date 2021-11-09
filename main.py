@@ -6,7 +6,8 @@ from bs4 import BeautifulSoup
 from github import Github
 from datetime import datetime
 from pytz import timezone
-import pandas 
+import pandas
+import calendar
 
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 
@@ -21,6 +22,8 @@ rank_json = json.dumps(rank, sort_keys=True)  # dict()를 str로 변경 rank, in
 with open(os.path.join(BASE_DIR, 'rank.json'), 'w+', encoding="utf-8") as f:
     json.dump(rank, f, ensure_ascii = False, indent=2)
         
+
+dotw = ["월요일", "화요일", "수요일", "목요일", "금요일", "토요일", "일요일"]
 seoul_timezone = timezone('Asia/Seoul')
 today = datetime.now(seoul_timezone)
 today_date = today.strftime("%Y년 %m월 %d일 %A요일")
