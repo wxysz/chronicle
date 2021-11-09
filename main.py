@@ -28,13 +28,10 @@ seoul_timezone = timezone('Asia/Seoul')
 today = datetime.now(seoul_timezone)
 # today_date = today.strftime("%Y년 %m월 %d일 %A요일")
 today_date_year = today.strftime("%Y")
+today_date_month = today.strftime("%m")
+yyyy = int(today_date_year)
 
-dsf = int(today_date_year)
-
-print(dsf)
-
-yyyy = dsf
-mm = 9
+mm = int(today_date_month)
 dd = 11
 
 dotw = calendar.weekday(yyyy, mm, dd)
