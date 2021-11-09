@@ -37,6 +37,18 @@ mm = int(today_date_month)
 dd = int(today_date_day)
 dotw = calendar.weekday(yyyy, mm, dd)
 print(days[dotw])
+
+
+### 요일 구하기
+import datetime
+ 
+def what_day_is_today(self):
+    now = datetime.datetime.now()
+    t = ['월', '화', '수', '목', '금', '토', '일']
+    r = datetime.datetime.today().weekday()
+    day = str(now.year) + '년 ' + str(now.month) + '월 ' + str(now.day) + '일 ' + t[r] + '요일'
+    return day
+    
 '''
 print(today_date_week)
 print(f"({today_date_week})요")
