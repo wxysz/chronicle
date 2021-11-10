@@ -66,11 +66,10 @@ repo = g.get_user().get_repo(repository_name)
 req1 = requests.get('https://www.kovo.co.kr/game/v-league/11210_team-ranking.asp?season=018&g_part=201&s_part=2')
 req1.encoding= None
 html1 = req.content
-soup1 = BeautifulSoup(html, "lxml")
+soup1 = BeautifulSoup(html1, "lxml")
+# soup = BeautifulSoup(req.content, 'html.parser')
+tables = soup1.select('#tab1 > div.wrp_lst.mt10')
 
-# 현재 페이지에서 table 태그 모두 선택하기
-#tables = soup1.select('#tab1 > div.wrp_lst.mt10')
-tables = soup1.find_all('tr')
 print(tables)
 '''
 # 하나의 테이블 태그 선택하기
