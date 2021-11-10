@@ -27,10 +27,15 @@ days = ["월요일", "화요일", "수요일", "목요일", "금요일", "토요
 seoul_timezone = timezone('Asia/Seoul')
 today = datetime.now(seoul_timezone)
 # today_date = today.strftime("%Y년 %m월 %d일 %A요일")
-today_date_year = today.strftime("%Y")
-today_date_month = today.strftime("%m")
-today_date_day = today.strftime("%d")
-today_date_week = today.strftime("%A")
+# today_date_year = today.strftime("%Y")
+# today_date_month = today.strftime("%m")
+# today_date_day = today.strftime("%d")
+# today_date_week = today.strftime("%A")
+
+day = ['월', '화', '수', '목', '금', '토', '일']
+tw = datetime.today().weekday()
+now = str(today.year) + '-' + str(today.month) + '-' + str(today.day) + '-' + day[tw]
+print(now)
 '''
 yyyy = int(today_date_year)
 mm = int(today_date_month)
@@ -50,8 +55,7 @@ def what_day_is_today(self):
     return day
     
 '''
-print(today_date_week)
-print(f"({today_date_week})요")
+
 
 access_token = os.environ['MY_GITHUB_TOKEN']
 repository_name = "chronicle" # 내 저장소 이름 필수로 바꿔야함 
@@ -65,12 +69,25 @@ repo = g.get_user().get_repo(repository_name)
 
 req1 = requests.get('https://www.kovo.co.kr/game/v-league/11210_team-ranking.asp?season=018&g_part=201&s_part=2')
 req1.encoding= None
-html1 = req.content
+html1 = req1.content
 soup1 = BeautifulSoup(html1, "lxml")
 # soup = BeautifulSoup(req.content, 'html.parser')
 tables = soup1.select('#tab1 > div.wrp_lst.mt10')
-
 print(tables)
+
+
+req2 = requests.get('https://www.kovo.co.kr/main.asp')
+req2.encoding= None
+html2 = req2.content
+soup2 = BeautifulSoup(html2, "lxml")
+# soup1 = BeautifulSoup(req1.content, 'html.parser')
+match1 = soup2.select('#mainWrap > article.schedule > div > div.con.l > div.sch_slider > ul.slider > li > div.match')
+
+match2 = soup2.select('#mainWrap > article.schedule > div > div.con.r > div.sch_slider > ul.slider > li > div.match')
+
+print(match1)
+print(match2)
+
 '''
 # 하나의 테이블 태그 선택하기
 table = tables[0]
