@@ -334,7 +334,7 @@
         "game04": "승",
         "game05": "승",
         "game06": "무",
-        "gameStatus": null
+        "gameStatus": "FE"
       },
       {
         "year": 2021,
@@ -364,7 +364,7 @@
         "game04": "패",
         "game05": "승",
         "game06": "패",
-        "gameStatus": null
+        "gameStatus": "FE"
       },
       {
         "year": 2021,
@@ -394,7 +394,7 @@
         "game04": "승",
         "game05": "패",
         "game06": "패",
-        "gameStatus": null
+        "gameStatus": "FE"
       },
       {
         "year": 2021,
@@ -424,7 +424,7 @@
         "game04": "승",
         "game05": "승",
         "game06": "무",
-        "gameStatus": null
+        "gameStatus": "FE"
       },
       {
         "year": 2021,
@@ -454,7 +454,7 @@
         "game04": "패",
         "game05": "패",
         "game06": "패",
-        "gameStatus": null
+        "gameStatus": "FE"
       },
       {
         "year": 2021,
@@ -484,7 +484,7 @@
         "game04": "패",
         "game05": "패",
         "game06": "승",
-        "gameStatus": null
+        "gameStatus": "FE"
       },
       {
         "year": 2021,
