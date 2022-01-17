@@ -9,8 +9,8 @@ on:
   pull_request:
     branches: [ master ]
   schedule:
-    - cron:  '59 13 * * *' # 주기적으로 실행하기 위한 스케줄링 현재 한국시간 저녁 11시에 맞춤
-                           # UST 가 default. UST 23:00는 한국시간 08:01 약 9시간 1분 차이남
+#    - cron:  '00 14 * * *' # 주기적으로 실행하기 위한 스케줄링 현재 한국시간 저녁 11시에 맞춤
+                           # UST 가 default. UST 23:00는 한국시간 08:00 약 9시간 0분 차이남
     
 jobs:
   build:
